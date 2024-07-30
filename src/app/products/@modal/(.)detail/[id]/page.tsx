@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const Modal = dynamic(() => import("@/components/core/Modal"),{loading: () => <p className="">Loading....</p>})
 export default async function detailProductsPage({ params }: any) {
   const apiData = await getProduct(
-    `http://localhost:3000/api/products/?id=${params.id}`
+    `${process.env.NEXTAUTH_API_URL}/api/products/?id=${params.id}`
   );
   const product = apiData.data;
   return (

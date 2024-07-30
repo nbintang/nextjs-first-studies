@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXTAUTH_API_URL || "http://localhost:3000"),
   title: "my-first-next-app",
   description: "belajar next js dari bang apip tercinta",
-  
+
 }
 export default function Home() {
   return (

@@ -34,6 +34,7 @@ export async function register(data: {
   fullname: string;
   email: string;
   password: string;
+  role?:string;
 }) {
   const q = query(
     collection(firestore, "users"),
@@ -54,7 +55,7 @@ export async function register(data: {
       await addDoc(collection(firestore, "users"), data);
       return { status: true, statusCode: 200, message: "Register Success" };
     } catch (error) {
-      return { status: false, statusCode: 400, message: error.message };
+      return { status: false, statusCode: 400, message: "Something went wrong at services" };
     }
   }
 }

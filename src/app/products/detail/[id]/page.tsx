@@ -2,7 +2,7 @@ import { getProduct } from "@/services/products";
 import { generateCurrency } from "@/utils/generateCurrency";
 export default async function detailProductsPage({ params }: any) {
   const apiData = await getProduct(
-    `http://localhost:3000/api/products/?id=${params.id}`
+    `${process.env.NEXTAUTH_API_URL}/api/products/?id=${params.id}`
   );
   const product = apiData.data;
   return (
