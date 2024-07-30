@@ -1,5 +1,11 @@
 import Image from "next/image";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "my-first-next-app",
+  description: "belajar next js dari bang apip tercinta",
+  
+}
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
